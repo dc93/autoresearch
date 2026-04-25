@@ -29,6 +29,7 @@ oppure prompt manuale: "leggi `program.md` e fai il setup".
 
 ## Note operative per Claude Code
 
-- I permessi in `.claude/settings.json` sono già configurati per il loop (uv, git, grep, tail, edit di `train.py`). Non serve `--dangerously-skip-permissions`.
-- `prepare.py`, `pyproject.toml`, `uv.lock` sono in `permissions.deny`: non provare a modificarli.
-- Una volta partito il loop **non chiedere conferma per continuare** (vedi "NEVER STOP" in `program.md:112`). L'utente potrebbe dormire.
+- `defaultMode: acceptEdits` è attivo: edit di `train.py` non chiedono conferma.
+- L'allowlist in `.claude/settings.json` copre `uv`, `git`, `grep`, `tail`, ecc. La denylist protegge `prepare.py`, `pyproject.toml`, `uv.lock`, `program.md`, `.claude/**`, `git push`, `pip install`, `rm -rf`.
+- **Stop hook auto-continue**: quando sei su un branch `autoresearch/*` e provi a chiudere il turno, l'hook `.claude/hooks/continue-loop.sh` blocca lo stop e ti reinietta nel loop. Non ti chiedi mai "vado avanti?", vai e basta finché l'utente non interrompe (ESC/Ctrl-C o cambio branch). Vedi anche "NEVER STOP" in `program.md:112`.
+- L'utente NON sarà presente per dare input. Tratta ogni decisione come tua. Se manca un dato, sceglilo tu in base a `program.md` e procedi.
