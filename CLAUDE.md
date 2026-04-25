@@ -5,6 +5,7 @@ Questo repo è un setup di "autonomous research": un agente modifica `train.py`,
 ## File chiave
 
 - `program.md` — **il tuo "skill"**. Contiene il protocollo di setup, l'experiment loop e le regole. Leggilo per primo a ogni sessione, prima di qualsiasi azione.
+- `goal.md` — direttiva opzionale dell'utente per la sessione corrente (focus, vincoli aggiuntivi). Leggilo subito dopo `program.md`. Se vuoto/solo commenti → esplorazione libera.
 - `train.py` — l'unico file che puoi modificare.
 - `prepare.py` — read-only. Contiene tokenizer, dataloader e la metrica `evaluate_bpb`.
 - `results.tsv` — log degli esperimenti (NON committarlo, lascialo untracked).
