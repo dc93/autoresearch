@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "claude-opus-4-7",
+  "permissions": {
+    "allow": [
+      "Bash(uv sync)",
+      "Bash(uv sync:*)",
+      "Bash(uv run prepare.py)",
+      "Bash(uv run train.py)",
+      "Bash(uv run train.py > run.log 2>&1)",
+      "Bash(git status)",
+      "Bash(git status:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git reset:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git stash:*)",
+      "Bash(grep:*)",
+      "Bash(tail:*)",
+      "Bash(head:*)",
+      "Bash(ls:*)",
+      "Bash(rm run.log)",
+      "Bash(mkdir:*)",
+      "Bash(nvidia-smi:*)",
+      "Bash(test:*)",
+      "Bash([:*)",
+      "Read",
+      "Edit(train.py)",
+      "Edit(results.tsv)",
+      "Write(results.tsv)",
+      "Write(run.log)"
+    ],
+    "deny": [
+      "Edit(prepare.py)",
+      "Edit(pyproject.toml)",
+      "Edit(uv.lock)",
+      "Bash(uv add:*)",
+      "Bash(uv remove:*)",
+      "Bash(pip install:*)",
+      "Bash(git push:*)",
+      "Bash(git push --force:*)",
+      "Bash(rm -rf:*)"
+    ]
+  }
+}
